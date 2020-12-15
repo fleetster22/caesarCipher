@@ -2,7 +2,6 @@
 import time
 import math
 
-
 # def greet(name):
 #     print(f"Rise and shine, {name}!")
 #     time.sleep(2)
@@ -52,28 +51,39 @@ import math
 # prime_checker(number=n)
 
 # Caesar Cipher
-alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+# TODO trim method? to be able to enter more than one word
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
+            'v', 'w', 'x', 'y', 'z',
+            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
+            'v', 'w', 'x', 'y', 'z']
 direction = input("Type 'encode' to encrypt or 'decode' to decrypt:\n")
 msg = input("Type your message:\n").lower()
-shift = int(input("Type the shift number:\n"))
-
-def encrypt(text, shift_amt):
-    cipher_msg = ""
-    for letter in text:
-        position = alphabet.index(letter)
-        new_position = position + shift_amt
-        new_letter = alphabet[new_position]
-        cipher_msg += new_letter
-    print(f"Here's your encrypted message: {cipher_msg}")
+shift = int(input("Enter the shift number:\n"))
 
 
-encrypt(msg, shift)
+# def encrypt(plain_text, shift_amt):
+#     cipher_msg = ""
+#     for letter in plain_text:
+#         position = alphabet.index(letter)
+#         new_position = position + shift_amt
+#         cipher_msg += alphabet[new_position]
+#     print(f"Here's your encrypted message: {cipher_msg}")
+#
+#
+# def decrypt(cipher_msg, shift_amt):
+#     plain_text = ""
+#     for letter in cipher_msg:
+#         position = alphabet.index(letter)
+#         new_position = position - shift_amt
+#         plain_text += alphabet[new_position]
+#     print(f"Here's your decrypted message: {plain_text}")
+#
+#
+# if direction == "encode":
+#     encrypt(plain_text=msg, shift_amt=shift)
+# else:
+#     decrypt(cipher_msg=msg, shift_amt=shift)
 
-# def decrypt():
+# OPTIMIZED Above Code
 
-# decrypt()
-
-
-
-# print("Here's your decrypted message: ")
-# input("Type 'yes' if you have another message to encrypt/decrypt. Otherwise, type 'no'")
+case
