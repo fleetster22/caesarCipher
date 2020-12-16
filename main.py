@@ -1,6 +1,7 @@
 # Day 8 of 100 Days of Code - The Complete Python Pro Bootcamp for 2021
 import time
 import math
+from art import logo
 
 # def greet(name):
 #     print(f"Rise and shine, {name}!")
@@ -50,15 +51,18 @@ import math
 #
 # prime_checker(number=n)
 
+
 # Caesar Cipher
-# TODO trim method? to be able to enter more than one word
+
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
             'v', 'w', 'x', 'y', 'z',
             'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
             'v', 'w', 'x', 'y', 'z']
+print(logo)
 direction = input("Type 'encode' to encrypt or 'decode' to decrypt:\n")
 msg = input("Type your message:\n").lower()
 shift = int(input("Enter the shift number:\n"))
+shift = shift % 26 + 1
 
 
 # def encrypt(plain_text, shift_amt):
@@ -86,4 +90,30 @@ shift = int(input("Enter the shift number:\n"))
 
 # OPTIMIZED Above Code
 
-case
+def caesar(start_text, shift_amt, cipher_direction):
+    end_text = ""
+    if cipher_direction == "decode":
+        shift_amt *= -1
+    for char in start_text:
+        if char in alphabet:
+            position = alphabet.index(char)
+            new_position = position + shift_amt
+            end_text += alphabet[new_position]
+        else:
+            end_text += char
+
+    print(f"Here's your {cipher_direction}d message: {end_text}")
+
+caesar(start_text=msg, shift_amt=shift, cipher_direction=direction)
+
+
+
+
+
+
+
+
+
+
+
+
