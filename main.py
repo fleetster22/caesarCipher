@@ -54,15 +54,13 @@ from art import logo
 
 # Caesar Cipher
 
-alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q',
+            'r', 's', 't', 'u',
             'v', 'w', 'x', 'y', 'z',
-            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
+            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q',
+            'r', 's', 't', 'u',
             'v', 'w', 'x', 'y', 'z']
 print(logo)
-direction = input("Type 'encode' to encrypt or 'decode' to decrypt:\n")
-msg = input("Type your message:\n").lower()
-shift = int(input("Enter the shift number:\n"))
-shift = shift % 26 + 1
 
 
 # def encrypt(plain_text, shift_amt):
@@ -104,16 +102,16 @@ def caesar(start_text, shift_amt, cipher_direction):
 
     print(f"Here's your {cipher_direction}d message: {end_text}")
 
-caesar(start_text=msg, shift_amt=shift, cipher_direction=direction)
 
+go_again = True
+while go_again:
+    direction = input("Type 'encode' to encrypt or 'decode' to decrypt:\n")
+    msg = input("Type your message:\n").lower()
+    shift = int(input("Enter the shift number:\n"))
+    shift = shift % 26 + 1
+    caesar(start_text=msg, shift_amt=shift, cipher_direction=direction)
 
-
-
-
-
-
-
-
-
-
-
+    result = input("Type 'yes' if you would lke to go again. Otherwise type 'no'\n")
+    if result == "no":
+        go_again = False
+        print("OK. Goodbye.")
